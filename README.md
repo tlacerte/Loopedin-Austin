@@ -11,7 +11,7 @@ Users can create and join events, see who is attending events, and see and add p
 &ndash; User will log in with an existing Google Account. <br>
 &ndash; The Home page shows users the most recent upcoming events. <br>
 &ndash; <br>
-&ndash; The Home page also shows other users recent Picto's.  You can click on them to add a comment and see other comments on that Picto, if there are any.  A comment is not text, users also commet with a Picto! 
+&ndash; 
 
 
 
