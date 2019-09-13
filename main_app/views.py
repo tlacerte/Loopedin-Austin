@@ -34,3 +34,9 @@ class EventCreate(CreateView):
   create_event_form = CreateEventForm()
   success_url = '/events/list/'
   fields = ['name', 'date', 'category', 'location']
+
+def event_detail(request, event_id):
+  event = Event.objects.get(id=event_id)
+  return render(request, 'events/detail.html')
+
+  
