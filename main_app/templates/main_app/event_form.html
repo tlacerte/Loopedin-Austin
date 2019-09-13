@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <form action="" method="post">
+  <form action="{% url 'event_create' %}" method="post">
     {% csrf_token %}
-    <table>
-      {{ create_event_form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
+      {{ form.as_p}}
+    <input type="submit" value="Add Event!" class="btn">
   </form>
+  <script>
+    // create a datepicker
+    var dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+    // initialize the location select
+    var selectEl = document.getElementById('id_location');
+    M.FormSelect.init(selectEl);
+  </script>
 {% endblock %}
+
