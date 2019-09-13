@@ -30,7 +30,7 @@ Users can create and join events, see who is attending events, and see and add p
 
 ## Entity Relationship Diagram
 
-![Picto ERD](link-to-erd-once-made)
+![ERD](https://www.lucidchart.com/invitations/accept/ad58e128-c763-4522-b569-9a277652e742)
 
 # User Stories
 
