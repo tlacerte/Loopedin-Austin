@@ -10,6 +10,7 @@ Users can create and join events, see who is attending events, and see and add p
 ## How to use it:
 &ndash; User will log in with an existing Google Account. <br>
 &ndash; The Home page shows users the most recent upcoming events. <br>
+&ndash; The user can create new events and choose existing events to attend<br>
 &ndash; <br>
 &ndash; 
 
