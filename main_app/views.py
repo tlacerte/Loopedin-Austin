@@ -21,3 +21,4 @@ def signup(request):
   form = SignUpForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
