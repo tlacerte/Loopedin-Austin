@@ -29,11 +29,21 @@ class EventsList(ListView):
   model = Event
   template_name = 'events/list.html'
   
-class EventCreate(CreateView):
-  model = Event
-  create_event_form = CreateEventForm()
-  success_url = '/events/list/'
-  fields = ['name', 'date', 'category', 'location']
+# class EventCreate(CreateView):
+#   model = Event
+#   create_event_form = CreateEventForm()
+#   success_url = '/events/list/'
+#   fields = ['name', 'date', 'category', 'location']
+
+def show_event_create(request):
+  return render(request, 'events/create.html')
+
+def event_create(request):
+  form = CreateEventForm(request.POST)
+  if form.is_valid():
+    new_event = form.save(commit=False)
+    new_event.save()
+  return redirect('events_list')
 
 def event_detail(request, event_id):
   event = Event.objects.get(id=event_id)
