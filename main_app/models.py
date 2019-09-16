@@ -4,17 +4,20 @@ from datetime import date
 from django.contrib.auth.models import User
 
 
-# CATEGORIES = (
-#     ('concert', 'Concert'),
-#     ('networking', 'Networking'),
-#     ('food-drink', 'Food/Drink'),
-#     ('market', 'Market')
-# )
+CATEGORIES = (
+    ('concert', 'Concert'),
+    ('networking', 'Networking'),
+    ('food-drink', 'Food/Drink'),
+    ('market', 'Market')
+)
 
 class Event(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField('event date')
-    category = models.CharField(max_length=100)
+    category = models.CharField(
+            max_length=20,
+            choices=CATEGORIES
+            )
     location = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

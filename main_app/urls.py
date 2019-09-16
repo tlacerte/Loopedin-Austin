@@ -9,6 +9,6 @@ urlpatterns = [
   # path('events/create', views.show_event_create, name='show_event_create'),
   # path('events/create/new', views.event_create, name='event_create'),
   #NEW PATH BELOW
-  path('events/create/', views.EventCreate.as_view(), name='event_create'),
+  path('events/create/', views.EventCreate.as_view(), name='events_create'),
   path('events/<int:event_id>', views.event_detail, name='detail'),
 ]
