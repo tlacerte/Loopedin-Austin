@@ -28,15 +28,13 @@
   </form>
   <script>
     // create a datepicker
-    {% comment %} var dateEl = document.getElementById('id_date');
+    var dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
       format: 'yyyy-mm-dd',
       defaultDate: new Date(),
       setDefaultDate: true,
       autoClose: true
     });
-    // initialize the location select
-    var selectEl = document.getElementById('id_location');
-    M.FormSelect.init(selectEl); {% endcomment %}
+
   </script>
 {% endblock %}

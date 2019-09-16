@@ -53,4 +53,4 @@ class UpdateEvent(UpdateView):
 class DeleteEvent(DeleteView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
-  success_url = '/events/list'
+  success_url = 'events/list'
