@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Update Event</h1>
+
+<div class="login-page extra">
+    <div class="form less">
+        <form class="login-form" method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn" value="SAVE">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

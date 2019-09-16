@@ -9,4 +9,7 @@ urlpatterns = [
   path('events/create', views.show_event_create, name='show_event_create'),
   path('events/create/new', views.event_create, name='event_create'),
   path('events/<int:event_id>', views.event_detail, name='detail'),
+  #path('events/<int:event_id>/update', views.show_event_update, name='show_event_update'),
+  #path('events/<int:event_id>/update/new', views.event_update, name='event_update'),
+  path('events/<int:pk>/update', views.UpdateEvent.as_view(), name='event_update')
 ]

@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <br>
-<h1>Add an Event</h1>
+<h1>Update Event</h1>
 <br>
-  <form action="{% url 'event_create' %}" method="post">
+<form action="{% url 'event_update' event.id %}" method="post">
     {% csrf_token %}
-    {% comment %} <table>
-    {{ event_form.as_table }}
-    </table> {% endcomment %}
         <label for="name">Event Name: </label>
-        <input id="name" type="text" name="name" value="{{ name }}">
+        <input id="name" type="text" name="name" value="{{ event.name }}">
         <label for="date">Date: </label>
-        <input id="date" type="date" name="date" value="{{ date }}">
+        <input id="date" type="date" name="date" value="{{ event.date }}">
         <label for="category">Category: </label>
-        <input id="category" list="CATEGORIES" name="category" value="{{ category }}">
+        <input id="category" list="CATEGORIES" name="category" value="{{ event.category }}">
         <datalist id="CATEGORIES">
             <option name="concert" value="Concert"></option>
             <option name="networking" value="Networking"></option>
@@ -22,13 +18,12 @@
             <option name="market" value="Market"></option>
         </datalist>
         <label for="location">Location: </label>
-        <input id="location" type="text" name="location" value="{{ location }}">
-
-    <input type="submit" value="Add Event!" class="btn">
-  </form>
+        <input id="location" type="text" name="location" value="{{ event.location }}">
+    <input type="submit" value="Update Event!" class="btn">
+  </form> 
   <script>
     // create a datepicker
-    {% comment %} var dateEl = document.getElementById('id_date');
+    var dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
       format: 'yyyy-mm-dd',
       defaultDate: new Date(),
@@ -37,6 +32,6 @@
     });
     // initialize the location select
     var selectEl = document.getElementById('id_location');
-    M.FormSelect.init(selectEl); {% endcomment %}
+    M.FormSelect.init(selectEl); 
   </script>
-{% endblock %}
+{% endblock %} 
