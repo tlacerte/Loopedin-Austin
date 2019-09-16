@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import SignUpForm, CreateEventForm
 from .models import Event, User
 
@@ -45,21 +45,12 @@ def event_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   return render(request, 'events/detail.html', { 'event': event })
 
-
-# def show_event_update(request, event_id):
-#   event = Event.objects.get(id=event_id)
-#   return render(request, 'events/update.html', { 'event': event })
-  
-# def event_update(request, event_id):
-#   event = Event.objects.get(id=event_id)
-#   event_form = CreateEventForm(request.POST)
-#   if event_form.is_valid():
-#     update_event = event_form.save(commit=False)
-#     update_event.user_id = request.user.id
-#     update_event.save()
-#     return redirect('detail', event_id)
-#   return render(request, 'detail', { 'event': event })
-
 class UpdateEvent(UpdateView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
+  success_url = '/'
+
+class DeleteEvent(DeleteView):
+  model = Event
+  fields = ['name', 'date', 'category', 'location']
+  success_url = '/events/list'
