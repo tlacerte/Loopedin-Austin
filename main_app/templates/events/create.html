@@ -6,13 +6,10 @@
 <br>
   <form action="{% url 'event_create' %}" method="post">
     {% csrf_token %}
-    {% comment %} <table>
-    {{ event_form.as_table }}
-    </table> {% endcomment %}
         <label for="name">Event Name: </label>
         <input id="name" type="text" name="name" value="{{ name }}">
         <label for="date">Date: </label>
-        <input id="date" type="date" name="date" value="{{ date }}">
+        <input id="calendar" type="date" name="date" value="{{ date }}">
         <label for="category">Category: </label>
         <input id="category" list="CATEGORIES" name="category" value="{{ category }}">
         <datalist id="CATEGORIES">
@@ -27,14 +24,12 @@
     <input type="submit" value="Add Event!" class="btn">
   </form>
   <script>
-    // create a datepicker
-    var dateEl = document.getElementById('id_date');
+    var dateEl = document.getElementById('calendar');
     M.Datepicker.init(dateEl, {
       format: 'yyyy-mm-dd',
       defaultDate: new Date(),
       setDefaultDate: true,
       autoClose: true
     });
-
   </script>
 {% endblock %}

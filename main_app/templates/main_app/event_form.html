@@ -13,4 +13,12 @@
     </div>
 </div>
 
+  <script>
+    var dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      setDefaultDate: false,
+      autoClose: true
+    });
+  </script>
 {% endblock %}
