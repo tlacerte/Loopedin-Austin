@@ -48,7 +48,7 @@ class EventCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
   # Let the CreateView do its job as usual
     return super().form_valid(form)  
-  success_url = '/events/'
+  success_url = '/events/list'
 
     
 def event_detail(request, event_id):
