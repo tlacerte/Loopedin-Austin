@@ -3,8 +3,7 @@
 
 <h1>Upcoming Events</h1>
 
-{% for event in events %}
-  <a href="">
+{% for event in event_list %}
     <div class="card">
         <a href={% url 'detail' event.id %}
         <div class="card-content">
@@ -13,7 +12,6 @@
             <p>Category: {{event.category}}</p>
             <p>Location: {{event.location}}</p>
         </div>
-        </a>
     </div>
   </a>
 {% endfor %}

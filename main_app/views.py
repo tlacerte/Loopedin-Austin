@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from .forms import SignUpForm, CreateEventForm
-from .models import Event
+from .models import Event, User
 
 def home(request):
   return render(request, 'index.html')
@@ -28,20 +28,16 @@ def signup(request):
 class EventsList(ListView):
   model = Event
   template_name = 'events/list.html'
-  
-# class EventCreate(CreateView):
-#   model = Event
-#   create_event_form = CreateEventForm()
-#   success_url = '/events/list/'
-#   fields = ['name', 'date', 'category', 'location']
 
 def show_event_create(request):
+  user = User.objects.get(id=request.user.id)
   return render(request, 'events/create.html')
 
 def event_create(request):
-  form = CreateEventForm(request.POST)
-  if form.is_valid():
-    new_event = form.save(commit=False)
+  event_form = CreateEventForm(request.POST)
+  if event_form.is_valid():
+    new_event = event_form.save(commit=False)
+    new_event.user_id = request.user.id
     new_event.save()
   return redirect('events_list')
 
