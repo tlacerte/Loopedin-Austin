@@ -9,6 +9,11 @@
     <p>Date: {{ event.date }}</p>
     <p>Category: {{ event.category }}</p>
     <p>Location: {{ event.location }}</p>
+
+    <div class="card-action">
+        {% comment %} <a href="{% url 'event_update' event.id %}">Edit</a>
+        <a href="{% url 'event_delete' event.id %}">Delete</a> {% endcomment %}
+      </div>
   </div>
 </div>
 
