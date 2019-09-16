@@ -48,7 +48,7 @@ def event_detail(request, event_id):
 class UpdateEvent(UpdateView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
-  success_url = '/'
+  success_url = '/events/list'
 
 class DeleteEvent(DeleteView):
   model = Event
