@@ -30,13 +30,17 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+
 class EventsList(ListView):
   model = Event
   template_name = 'events/list.html'
 
+
 def show_event_create(request):
   user = User.objects.get(id=request.user.id)
   return render(request, 'events/create.html')
+
+
 
 def event_create(request):
   event_form = CreateEventForm(request.POST)
@@ -46,20 +50,24 @@ def event_create(request):
     new_event.save()
   return redirect('events_list')
 
+
 def event_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   return render(request, 'events/detail.html', { 'event': event })
 
-class UpdateEvent(UpdateView):
+
+class UpdateEvent(LoginRequiredMixin ,UpdateView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
   success_url = '/events/list'
 
-class DeleteEvent(DeleteView):
+
+class DeleteEvent(LoginRequiredMixin, DeleteView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
   success_url = '/events/list'
-  
+
+@login_required  
 def add_photo(request, event_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
@@ -73,3 +81,14 @@ def add_photo(request, event_id):
     except:
       print('An error occurred uploading file to S3')
   return redirect('detail', event_id=event_id)
+
+
+
+def user_events(request):
+  return render(request, 'events/userlist.html', { 'event': event })
+
+
+@login_required
+def event_attend(request, event_id):
+  event = Event.objects.get(id=event_id)
+  return redirect('user_events_list', {'event': event})
