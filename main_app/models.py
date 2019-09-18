@@ -5,6 +5,10 @@ from django.contrib.auth.models import User
 
 class Attendee(models.Model):
     attendee = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={"pk": self.pk})
+    
 
 class Event(models.Model):
     name = models.CharField(max_length=100)
