@@ -86,15 +86,18 @@ def add_photo(request, event_id):
 
 @login_required
 def user_events(request):
-  events = Event.objects.filter(Q(user=request.user.id) | Q(attendees=request.user.id))
-  return render(request, 'events/userlist.html', { 'events': events })
+  userevents = Event.objects.filter(user=request.user.id)
+  attendevents = Attendee.objects.filter(user_id=request.user.id)
+  print(attendevents)
+  return render(request, 'events/userlist.html', { 'userevents': userevents, 'attendevents': attendevents })
+
 
 
 @login_required
 def event_attend(request, event_id):
   event = Event.objects.get(id=event_id)
-  event.attendee_id = request.user.id
-  event.save()
+  attendee = Attendee(user=request.user, event = event)
+  attendee.save() 
   return redirect('user_events_list')
 
 

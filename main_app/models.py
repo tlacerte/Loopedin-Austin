@@ -23,6 +23,8 @@ class Attendee(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={"pk": self.pk})
+
+    
     
 class Photo(models.Model):
     url = models.CharField(max_length=200)
