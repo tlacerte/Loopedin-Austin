@@ -92,9 +92,8 @@ def user_events(request):
 
 @login_required
 def event_attend(request, event_id):
-  event = Event.objects.get(id=event_id)
-  event.attendees = request.user.id
-  event.save()
+  attendee = Attendee(user=request.user.id, event = event_id)
+  attendee.save() 
   return redirect('user_events_list')
 
 
