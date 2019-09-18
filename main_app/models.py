@@ -3,13 +3,16 @@ from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
+class Attendee(models.Model):
+    attendee = models.ForeignKey(User, on_delete=models.CASCADE)
+
 class Event(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField('event date')
     category = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    attendees = models.ManyToManyField(User, related_name='attendees')
+    attendees = models.ManyToManyField(Attendee)
 
     def __str__(self):
         return self.name
@@ -23,3 +26,4 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for event_id: {self.event_id} @{self.url}"
+    
