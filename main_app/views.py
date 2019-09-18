@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.db.models import Q
 from .forms import SignUpForm, CreateEventForm
 import uuid
 import boto3
@@ -35,13 +36,13 @@ class EventsList(ListView):
   model = Event
   template_name = 'events/list.html'
 
-
+@login_required
 def show_event_create(request):
   user = User.objects.get(id=request.user.id)
   return render(request, 'events/create.html')
 
 
-
+@login_required
 def event_create(request):
   event_form = CreateEventForm(request.POST)
   if event_form.is_valid():
@@ -83,12 +84,19 @@ def add_photo(request, event_id):
   return redirect('detail', event_id=event_id)
 
 
-
-def user_events(request):
-  return render(request, 'events/userlist.html', { 'event': event })
-
-
 @login_required
-def event_attend(request, event_id):
-  event = Event.objects.get(id=event_id)
-  return redirect('user_events_list', {'event': event})
+def user_events(request):
+  events = Event.objects.filter(Q(user=request.user.id) | Q(attendees=request.user.id))
+  return render(request, 'events/userlist.html', { 'events': events })
+
+
+# @login_required
+# def event_attend(request, event_id, user_id):
+#   event = Event.objects.get(id=event_id)
+#   event.atendees= request.user.id
+#   event.save()
+#   return redirect('user_events_list')
+
+
+
+
