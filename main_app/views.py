@@ -9,7 +9,7 @@ from django.db.models import Q
 from .forms import SignUpForm, CreateEventForm
 import uuid
 import boto3
-from .models import Event, User, Photo
+from .models import Event, User, Photo, Attendee
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'loopedin'
@@ -93,7 +93,7 @@ def user_events(request):
 @login_required
 def event_attend(request, event_id, user_id):
   event = Event.objects.get(id=event_id)
-  event.atendees= request.user.id
+  event.attendees = Attendee.objects.get(id=user_id)
   event.save()
   return redirect('user_events_list')
 
