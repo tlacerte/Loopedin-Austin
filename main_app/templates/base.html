@@ -9,6 +9,7 @@
   <title>Loopedin Austin</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
@@ -18,7 +19,7 @@
         <ul>
           <li><a href="" class="left brand-logo">&nbsp;&nbsp;Loopedin Austin</a></li>
         </ul>
-        <ul class="right">
+        <ul id="nav-mobile" class="right">
           <li><a href="/">Home</a></li>
           <li><a href="{% url 'events_list' %}"">Upcoming Events</a></li>
           {% if user.is_authenticated %}
