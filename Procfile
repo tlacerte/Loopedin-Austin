@@ -1,1 +1,1 @@
-web: gunicorn Loopedin-Austin.wsgi
+web: gunicorn LOOPEDIN-AUSTIN.wsgi
