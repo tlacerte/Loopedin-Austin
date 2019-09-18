@@ -16,7 +16,7 @@ class Event(models.Model):
     category = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    attendees = models.ManyToManyField(Attendee)
+    attendees = models.ForeignKey(Attendee, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
