@@ -5,10 +5,34 @@ body {
 }
   
 main {
-    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
   
-footer {
+footer.page-footer {
     padding-top: 0;
     text-align: right;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }
+
+h1, h2 {
+    font-family: 'Lilita One', cursive !important;
+}
+
+.brand-logo {
+    font-family: 'Lilita One', cursive !important;
+}
+
+.card-title {
+    font-weight: bold !important;
+}
+
+.card-content {
+    font-size: 1.1em;
+}
+

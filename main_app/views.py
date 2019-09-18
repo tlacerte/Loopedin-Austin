@@ -90,12 +90,12 @@ def user_events(request):
   return render(request, 'events/userlist.html', { 'events': events })
 
 
-# @login_required
-# def event_attend(request, event_id, user_id):
-#   event = Event.objects.get(id=event_id)
-#   event.atendees= request.user.id
-#   event.save()
-#   return redirect('user_events_list')
+@login_required
+def event_attend(request, event_id, user_id):
+  event = Event.objects.get(id=event_id)
+  event.atendees= request.user.id
+  event.save()
+  return redirect('user_events_list')
 
 
 
