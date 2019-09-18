@@ -3,7 +3,7 @@
 
 <h1>My Events</h1>
 
-{% for event in events|dictsort:"date" %}
+{% for event in userevents|dictsort:"date" %}
     <div class="card">
         <a href={% url 'detail' event.id %}
         <div class="card-content">
@@ -11,6 +11,21 @@
             <p>Date: {{ event.date }}</p>
             <p>Category: {{event.category}}</p>
             <p>Location: {{event.location}}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+<h1>Events I'm Attending</h1>
+
+{% for attendevent in attendevents|dictsort:"date" %}
+    <div class="card">
+        <a href={% url 'detail' attendevent.id %}
+        <div class="card-content">
+            <span class="card-title">{{ attendevent.name }}</span> 
+            <p>Date: {{ attendevent.date }}</p>
+            <p>Category: {{ attendevent.category }}</p>
+            <p>Location: {{ attendevent.location }}</p>
         </div>
     </div>
   </a>
