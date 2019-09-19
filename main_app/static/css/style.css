@@ -37,7 +37,7 @@ h1, h2 {
     font-size: 1.1em;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 711px) {
     main {
         display: grid;
     }
