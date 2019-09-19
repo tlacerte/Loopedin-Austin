@@ -32,5 +32,8 @@
     <input type="submit" class="btn" value="Upload Photo">
 </form>
 <h1>Who is attending</h1>
+{% for attendee in attendees %}
+<p class="attendee-name">{{ attendee.first_name }}  {{ attendee.last_name }}</p>
+{% endfor %}
 
 {% endblock %}

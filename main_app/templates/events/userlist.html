@@ -3,6 +3,7 @@
 
 <h1>My Events</h1>
 
+
 {% for event in userevents|dictsort:"date" %}
     <div class="card">
         <a href={% url 'detail' event.id %}
