@@ -37,6 +37,15 @@ h1, h2 {
     font-size: 1.1em;
 }
 
+.detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-col-2 {
+    margin: 2em;
+}
+
 @media all and (max-width: 711px) {
     main {
         display: grid;
@@ -48,5 +57,10 @@ h1, h2 {
 
     nav {
         height: 6em;
+    }
+
+    .detail-container {
+        display: grid;
+        grid-template-columns: 1fr;
     }
   }

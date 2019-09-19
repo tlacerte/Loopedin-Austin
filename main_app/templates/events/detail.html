@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<div class="detail-container">
 <div class="col-1">
 <h1>Event Details</h1>
 
@@ -22,6 +22,18 @@
       </div>
   </div>
 </div>
+</div>
+
+<div class="detail-col-2">
+<h2>Who is attending</h2>
+<ul class="collection">
+{% for attendee in attendees %}
+<li class="collection-item">{{ attendee.first_name }} {{ attendee.last_name }}</li>
+{% endfor %}
+</div>
+</ul>
+</div>
+
 {% for photo in event.photo_set.all %}
     <img class="responsive-img card-panel" src="{{ photo.url }}">
 {% empty %}
@@ -33,12 +45,4 @@
     <br><br>
     <input type="submit" class="btn" value="Upload Photo">
 </form>
-</div>
-
-<div class="col-2">
-<h1>Who is attending</h1>
-{% for attendee in attendees %}
-<p class="attendee-name">{{ attendee.first_name }}  {{ attendee.last_name }}</p>
-{% endfor %}
-</div>
 {% endblock %}
