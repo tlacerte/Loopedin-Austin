@@ -25,12 +25,20 @@ h1, h2 {
     font-family: 'Lilita One', cursive !important;
 }
 
+i {
+    margin-left: 1em;
+}
+
 .brand-logo {
     font-family: 'Lilita One', cursive !important;
 }
 
 .card-title {
     font-weight: bold !important;
+}
+
+.list-title {
+    text-shadow: 2px 2px #000000;
 }
 
 .card-content {
