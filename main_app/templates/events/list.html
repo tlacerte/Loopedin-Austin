@@ -3,10 +3,9 @@
 
 <h1>Upcoming Events</h1>
 
+<div class="list-container">
 {% for event in event_list|dictsort:"date"%}
-
 <div class="row">
-
 <div class="card">
     <div class="card-image">
         {% if event.category == "Concert" %}
@@ -28,9 +27,7 @@
             <p>Location: {{event.location}}</p>
     </div>
 </div>
-
-
 </a>
 {% endfor %}
-
+</div>
 {% endblock %}

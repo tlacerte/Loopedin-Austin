@@ -46,6 +46,15 @@ h1, h2 {
     margin: 2em;
 }
 
+.list-container {
+    display: flex !important;
+    flex-flow: row wrap !important;
+}
+
+.list-container > * {
+    flex: 3 1fr;
+}
+
 @media all and (max-width: 711px) {
     main {
         display: grid;
