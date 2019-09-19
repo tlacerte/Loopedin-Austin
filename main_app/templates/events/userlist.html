@@ -19,6 +19,7 @@
 
 <h1>Events I'm Attending</h1>
 
+{% if attendevents %}
 {% for attendevent in attendevents|dictsort:"date" %}
     <div class="card">
         <a href={% url 'detail' attendevent.id %}
@@ -31,5 +32,6 @@
     </div>
   </a>
 {% endfor %}
+{% endif %}
 
 {% endblock %}
