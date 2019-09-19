@@ -26,6 +26,9 @@ class Attendee(models.Model):
 
     
     
+    def __str__(self):
+        return self.event
+    
 class Photo(models.Model):
     url = models.CharField(max_length=200)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)

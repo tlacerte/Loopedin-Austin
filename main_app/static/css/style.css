@@ -20,6 +20,7 @@ footer.page-footer {
     margin-bottom: 0px;
 }
 
+
 h1, h2 {
     font-family: 'Lilita One', cursive !important;
 }
@@ -36,3 +37,16 @@ h1, h2 {
     font-size: 1.1em;
 }
 
+@media all and (max-width: 500px) {
+    main {
+        display: grid;
+    }
+
+    nav .brand-logo.left {
+        margin-top: 1em;
+    }
+
+    nav {
+        height: 6em;
+    }
+  }
