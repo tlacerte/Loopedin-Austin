@@ -11,9 +11,12 @@
     <p>Location: {{ event.location }}</p>
 
     <div class="card-action">
+        {% if event.user_id == creatorid %}
         <a href="{% url 'event_update' event.id %}">Edit</a>
         <a href="{% url 'event_delete' event.id %}">Delete</a>
+        {% else %}
         <a href="{% url 'event_attend' event.id %}">Attend Event</a>
+        {% endif %}
       </div>
   </div>
 </div>
@@ -28,5 +31,6 @@
     <br><br>
     <input type="submit" class="btn" value="Upload Photo">
 </form>
+<h1>Who is attending</h1>
 
 {% endblock %}

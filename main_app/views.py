@@ -17,6 +17,7 @@ BUCKET = 'loopedin'
 def home(request):
   return render(request, 'index.html')
 
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
@@ -36,6 +37,7 @@ class EventsList(ListView):
   model = Event
   template_name = 'events/list.html'
 
+
 @login_required
 def show_event_create(request):
   user = User.objects.get(id=request.user.id)
@@ -54,7 +56,8 @@ def event_create(request):
 
 def event_detail(request, event_id):
   event = Event.objects.get(id=event_id)
-  return render(request, 'events/detail.html', { 'event': event })
+  creatorid = request.user.id
+  return render(request, 'events/detail.html', { 'event': event, 'creatorid': creatorid })
 
 
 class UpdateEvent(LoginRequiredMixin ,UpdateView):
@@ -67,6 +70,7 @@ class DeleteEvent(LoginRequiredMixin, DeleteView):
   model = Event
   fields = ['name', 'date', 'category', 'location']
   success_url = '/events/list'
+
 
 @login_required  
 def add_photo(request, event_id):
@@ -87,10 +91,11 @@ def add_photo(request, event_id):
 @login_required
 def user_events(request):
   userevents = Event.objects.filter(user=request.user.id)
-  attendevents = Attendee.objects.filter(user_id=request.user.id)
-  print(attendevents)
+  userattend =  Attendee.objects.filter(user_id=request.user.id)
+  attendevents = []
+  for event in userattend:
+    attendevents.append(Event.objects.get(id=event.event_id))
   return render(request, 'events/userlist.html', { 'userevents': userevents, 'attendevents': attendevents })
-
 
 
 @login_required
