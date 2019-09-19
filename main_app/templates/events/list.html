@@ -4,16 +4,33 @@
 <h1>Upcoming Events</h1>
 
 {% for event in event_list|dictsort:"date"%}
-    <div class="card">
-        <a href={% url 'detail' event.id %}
-        <div class="card-content">
-            <span class="card-title">{{ event.name }}</span> 
+
+<div class="row">
+
+<div class="card">
+    <div class="card-image">
+        {% if event.category == "Concert" %}
+        <img src="https://i.imgur.com/yogNbxI.jpg" alt="concert image">
+        {% elif event.category == "Networking" %}
+        <img src="https://i.imgur.com/1kmTARG.jpg" alt="networking image">
+        {% elif event.category == "Food/Drink" %}
+        <img src="https://i.imgur.com/l9t0N13.jpg" alt="food and drink">
+        {% elif event.category == "Market" %}
+        <img src="https://i.imgur.com/lRyILHR.jpg" alt="market">
+        {% else %}
+        <img src="https://i.imgur.com/1kmTARG.jpg" alt="alt category image">
+        {% endif %}
+        <span class="card-title">{{ event.name }}</span>
+    </div>
+        <a href={% url 'detail' event.id %} <div class="card-content">
             <p>Date: {{ event.date }}</p>
             <p>Category: {{event.category}}</p>
             <p>Location: {{event.location}}</p>
-        </div>
     </div>
-  </a>
+</div>
+
+
+</a>
 {% endfor %}
 
 {% endblock %}
