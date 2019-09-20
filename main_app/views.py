@@ -57,11 +57,12 @@ def event_create(request):
 def event_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   creatorid = request.user.id
+  userisattending = Attendee.objects.filter(event_id=event_id).filter(user_id=request.user.id).exists()
   eventattend =  Attendee.objects.filter(event_id=event_id)
   attendees = []
   for atendee in eventattend:
     attendees.append(User.objects.get(id=atendee.user_id))
-  return render(request, 'events/detail.html', { 'event': event, 'creatorid': creatorid, 'attendees': attendees })
+  return render(request, 'events/detail.html', { 'event': event, 'creatorid': creatorid, 'attendees': attendees, 'userisattending': userisattending })
 
 
 class UpdateEvent(LoginRequiredMixin ,UpdateView):

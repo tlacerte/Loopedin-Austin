@@ -16,7 +16,7 @@
         {% if event.user_id == creatorid %}
         <a href="{% url 'event_update' event.id %}">Edit</a>
         <a href="{% url 'event_delete' event.id %}">Delete</a>
-        {% else %}
+        {% elif not userisattending %}
         <a href="{% url 'event_attend' event.id %}">Attend Event</a>
         {% endif %}
       </div>
