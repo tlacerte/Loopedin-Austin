@@ -30,11 +30,11 @@ Users can create and join events, see who is attending events, and see and add p
 
 ## Pitch Deck
 
-![Pitchdeck](https://docs.google.com/presentation/d/1yvYs6ppsYkMtqd35dhv4-v68OH3iBtPjccIgoyZAOX8/edit)
+[Pitchdeck](https://docs.google.com/presentation/d/1yvYs6ppsYkMtqd35dhv4-v68OH3iBtPjccIgoyZAOX8/edit)
 
 ## Presentation
 
-![Presentation](https://docs.google.com/presentation/d/12xQ5MWX6vZnkl3Y9MbwXcDMAKhkppkRhdHwbbx0YipI/edit?usp=sharing)
+[Presentation](https://docs.google.com/presentation/d/12xQ5MWX6vZnkl3Y9MbwXcDMAKhkppkRhdHwbbx0YipI/edit?usp=sharing)
 
 ## Entity Relationship Diagram
 
