@@ -8,10 +8,10 @@ Users can create and join events, see who is attending events, and see and add p
 
 
 ## How to use it:
-&ndash; User will log in with an existing Google Account. <br>
-&ndash; The Home page shows users the most recent upcoming events. <br>
-&ndash; <br>
-&ndash; 
+&ndash; User will be welcomed to a home page where they are able to click to see upcoming events and sign up. <br>
+&ndash; Once a user is signed in, they are able to create an event, see the details of an event, and say they are attending an event.
+&ndash; User will be directed to their events page where they can see all of the events they created and the events they are attending. 
+&ndash; The users can upload pictures to each event page before and after the event for everyone who has an account can see. 
 
 
 
@@ -42,6 +42,10 @@ AAU |  I want to be able to edit an event that I created | in case the details o
 AAU |  I want to be able to delete an event from my profile | in case I no longer want to attend the event
 AAU |  I want to be able to add an event to my profile | so that I can keep track of events I would like to attend
 
-# Planned Features
+# Stretch Features
 * Add autocomplete for address entry fields
 * Add Google Maps widget 
+
+# Pitch Deck
+
+![PITCHDECK](https://docs.google.com/presentation/d/1yvYs6ppsYkMtqd35dhv4-v68OH3iBtPjccIgoyZAOX8/edit)
