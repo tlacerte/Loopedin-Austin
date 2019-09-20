@@ -10,8 +10,8 @@ Users can create and join events, see who is attending events, and see and add p
 ## How to use it:
 &ndash; User will log in with an existing Google Account. <br>
 &ndash; The Home page shows users the most recent upcoming events. <br>
-&ndash; Once a user is signed in, they are able to create an event, see the details of an event, and say they are attending an event.
-&ndash; User will be directed to their events page where they can see all of the events they created and the events they are attending. 
+&ndash; Once a user is signed in, they are able to create an event, see the details of an event, and say they are attending an event.<br>
+&ndash; User will be directed to their events page where they can see all of the events they created and the events they are attending. <br>
 &ndash; The users can upload pictures to each event page before and after the event for everyone who has an account can see. 
 
 
