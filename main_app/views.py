@@ -62,7 +62,12 @@ def event_detail(request, event_id):
   attendees = []
   for atendee in eventattend:
     attendees.append(User.objects.get(id=atendee.user_id))
-  return render(request, 'events/detail.html', { 'event': event, 'creatorid': creatorid, 'attendees': attendees, 'userisattending': userisattending })
+  return render(request, 'events/detail.html', {
+     'event': event, 
+     'creatorid': creatorid, 
+     'attendees': attendees, 
+     'userisattending': userisattending 
+     })
 
 
 class UpdateEvent(LoginRequiredMixin ,UpdateView):
@@ -100,7 +105,10 @@ def user_events(request):
   attendevents = []
   for event in userattend:
     attendevents.append(Event.objects.get(id=event.event_id))
-  return render(request, 'events/userlist.html', { 'userevents': userevents, 'attendevents': attendevents })
+  return render(request, 'events/userlist.html', { 
+    'userevents': userevents, 
+    'attendevents': attendevents 
+    })
 
 
 @login_required
