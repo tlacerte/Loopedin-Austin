@@ -1,6 +1,6 @@
 # Loopedin Austin
 
-[Link to deployed application](insert_link_once_deployed)
+[Link to deployed application](https://loopedin-austin.herokuapp.com)
 
 ## What is it?
 Loopedin Austin is your go to place for keeping track of upcoming and past events in the Austin area.
@@ -10,8 +10,9 @@ Users can create and join events, see who is attending events, and see and add p
 ## How to use it:
 &ndash; User will log in with an existing Google Account. <br>
 &ndash; The Home page shows users the most recent upcoming events. <br>
-&ndash; <br>
-&ndash; 
+&ndash; Once a user is signed in, they are able to create an event, see the details of an event, and say they are attending an event.
+&ndash; User will be directed to their events page where they can see all of the events they created and the events they are attending. 
+&ndash; The users can upload pictures to each event page before and after the event for everyone who has an account can see. 
 
 
 
@@ -26,6 +27,14 @@ Users can create and join events, see who is attending events, and see and add p
 [Link to prototype](https://projects.invisionapp.com/d/main?origin=v7#/console/18459584/383693565/preview)
 
 ![Picto Wireframes](https://i.imgur.com/f7J8GLq.jpg)
+
+## Pitch Deck
+
+![Pitchdeck](https://docs.google.com/presentation/d/1yvYs6ppsYkMtqd35dhv4-v68OH3iBtPjccIgoyZAOX8/edit)
+
+## Presentation
+
+![Presentation](https://docs.google.com/presentation/d/12xQ5MWX6vZnkl3Y9MbwXcDMAKhkppkRhdHwbbx0YipI/edit?usp=sharing)
 
 ## Entity Relationship Diagram
 
